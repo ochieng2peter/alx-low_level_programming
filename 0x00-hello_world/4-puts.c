@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
- * main is the entry point - beggining of the program
+ * main - Entry point
  *
- * return 0 means success and ends
+ * Return: Alaways 0 (Success)
  *
- * use of puts instead of the simple printf
+ * Description: use of puts instead of the simple printf
  */
 int main(void)
 {
