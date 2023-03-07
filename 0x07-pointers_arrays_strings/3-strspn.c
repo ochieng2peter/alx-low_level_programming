@@ -1,3 +1,15 @@
+/* main.h */
+
+#ifndef MAIN_H
+#define MAIN_H
+
+unsigned int _strspn(const char *s, const char *accept);
+
+#endif /* MAIN_H */
+
+
+/* main.c */
+
 #include "main.h"
 
 /**
@@ -6,23 +18,23 @@
  * @accept: accepted bytes.
  * Return: the number of accepted bytes.
  */
-unsigned int _strspn(char *s, char *accept)
+unsigned int _strspn(const char *s, const char *accept)
 {
-	unsigned int i, j, bool;
+	unsigned int i, j, found;
 
-	for (i = 0; *(s + i) != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		bool = 1;
-		for (j = 0; *(accept + j) != '\0'; j++)
+		found = 0;
+		for (j = 0; accept[j] != '\0'; j++)
 		{
-			if (*(s + i) == *(accept + j))
+			if (s[i] == accept[j])
 			{
-				bool = 0;
+				found = 1;
 				break;
 			}
 		}
-		if (bool == 1)
+		if (!found)
 			break;
 	}
-	return (i);
+	return i;
 }
