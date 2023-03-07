@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	char *i = "EEllen of Troy";
-	char *j = "Ellen";
-	char *k;
+	char *s = "wworld of this";
+	char *f = "world";
+	char *t;
 
-	k = _strstr(s, j);
-	printf("%s\n", k);
+	t = _strstr(s, f);
+	printf("%s\n", t);
 	return (0);
 }
