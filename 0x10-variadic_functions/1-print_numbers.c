@@ -1,4 +1,6 @@
-#include "variadic_functions"
+#include <stdarg.h>
+#include <stdio.h>
+
 /**
  * print_numbers - a function that print numbers, followed by a new line.
  *
@@ -7,25 +9,25 @@
  *
  * Return: nothing
 */
+
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int index;
 
-	/*Initialize the argument list from the start*/
-
+	/* initialize the argument list from the start */
 	va_start(ap, n);
 
-	/*Iterate through each argument*/
+	/* iterate through each argument*/
 	for (index = 0; index < n; index++)
 	{
-		/*print next argument*/
+		/* print next argument */
 		printf("%d", va_arg(ap, int));
-		/*print separator only between arguments */
+		/* print separator only between arguments */
 		if (separator && index != n - 1)
 			printf("%s", separator);
 	}
-		printf("\n");
-		/*Cleanup*/
-		va_end(ap);
+	/*clean up*/
+	va_end(ap);
+	printf("\n");
 }
