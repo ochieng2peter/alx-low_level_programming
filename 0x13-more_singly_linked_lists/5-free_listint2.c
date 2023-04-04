@@ -1,28 +1,31 @@
 #include "lists.h"
 
 /**
- * free_listint2 - frees a listint_t list and sets head to NULL
- * @head: pointer to pointer to the head of the list
- */
+ * free_listint2 - a function that frees the list and sets head to NULL
+ *
+ * @head: pointer to the first node
+ *
+ * Return: nothing
+*/
+
 void free_listint2(listint_t **head)
 {
-	listint_t *current;
-	if ( head == NULL)
-	{
-		return;
-	}
 
-/* Traverse the list, freeing each node */
-	while (*head != NULL)
-	{
-/* Store the current node */
-	current = *head;
-/* Move head to the next node */
-	*head = (*head)->next;
-/* Free the current node */
-	free(current);
-	}
+	listint_t *crnt, *tmp;
 
-/* Set head to NULL to indicate an empty list */
-*head = NULL;
+	/* check if the head pointer is not null*/
+	if (head != NULL)
+	{
+		crnt = *head;
+
+		while ((tmp = crnt) != NULL)
+		{
+/*assign the next node in the linked list to current*/
+			crnt = crnt->next;
+/* free the memory allocated for the current node*/
+			free(temp);
+		}
+/* set the head pointer to null, effectively freeing the entire linked list*/
+		*head = NULL;
+	}
 }
