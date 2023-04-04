@@ -7,6 +7,10 @@
 void free_listint2(listint_t **head)
 {
 	listint_t *current;
+	if ( head == NULL)
+	{
+		return;
+	}
 
 /* Traverse the list, freeing each node */
 	while (*head != NULL)
@@ -17,10 +21,6 @@ void free_listint2(listint_t **head)
 	*head = (*head)->next;
 /* Free the current node */
 	free(current);
-	}
-	if (head == NULL)
-	{
-		return;
 	}
 
 /* Set head to NULL to indicate an empty list */
