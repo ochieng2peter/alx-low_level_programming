@@ -23,7 +23,7 @@ void free_listint2(listint_t **head)
 /*assign the next node in the linked list to current*/
 			crnt = crnt->next;
 /* free the memory allocated for the current node*/
-			free(temp);
+			free(tmp);
 		}
 /* set the head pointer to null, effectively freeing the entire linked list*/
 		*head = NULL;
