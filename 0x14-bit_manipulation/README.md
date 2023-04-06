@@ -1,6 +1,6 @@
 # Peters - 0x14. #C - Bit manipulation👣 
 
-![img](../.imgs/bit_manipulation.png)
+![img](https://github.com/ochieng2peter/alx-low_level_programming/blob/main/bitwise.png)
 
 ## Resource
 
@@ -9,11 +9,11 @@
 2. [How to add and minus binary numbers](https://youtu.be/C5EkxfNEMjE)
 3. [Binary ..](https://youtu.be/RrJXLdv1i74)
 4. [Binary Addition and Subtraction With Negative Numbers](https://youtu.be/sJXTo3EZoxM)
-5. [Bitwise Operators in C part 1] ( https://youtu.be/jlQmeyce65Q)
-6. [Bitwise Operators in C part 2] ( https://youtu.be/8aFik6lPPaA)
-7. [Bitwise Operators in C part 3] ( https://youtu.be/GhhJP6vpEA8)
-8. [Bitwise Operators in C part 4] ( https://youtu.be/kYR5biY4OHw)
-9. [Algorithms: Bit Manipulation] ( https://youtu.be/NLKQEOgBAnw)
+5. [Bitwise Operators in C part 1]( https://youtu.be/jlQmeyce65Q)
+6. [Bitwise Operators in C part 2]( https://youtu.be/8aFik6lPPaA)
+7. [Bitwise Operators in C part 3]( https://youtu.be/GhhJP6vpEA8)
+8. [Bitwise Operators in C part 4]( https://youtu.be/kYR5biY4OHw)
+9. [Algorithms: Bit Manipulation]( https://youtu.be/NLKQEOgBAnw)
 
 -------------------------------------------------------------------------------------------------------------------
 
