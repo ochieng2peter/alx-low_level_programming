@@ -17,7 +17,7 @@
 
 -------------------------------------------------------------------------------------------------------------------
 
-- Below are some notes on `~`, `>>` and `<<` bitwise operators.
+- Bitwise operators `1. AND - &` `2. OR -|` `3. XOR - ^` `4. NOT - ~` `5. LEFT SHIFT - <<` `6. RIGHT SHIFT - >>`
 
 - NOT operator `~`
 	- Result is `0` when bit is `1` and `1` when bit is `0`
