@@ -8,7 +8,7 @@
 
 # C is FUN 😊
 
-<..!   <p align="center">
+<!..<p align="center">
   <img src="https://i.postimg.cc/rprHShJ1/C-compilation-process.gif" />
 </p>...>
 
