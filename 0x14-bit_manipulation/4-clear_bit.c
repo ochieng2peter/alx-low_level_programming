@@ -18,6 +18,5 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	/* Perform bitwise AND with the mask to clear the bit at the given index */
 	*n &= msk;
-
 	return (1);
 }
