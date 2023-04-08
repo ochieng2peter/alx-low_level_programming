@@ -6,27 +6,30 @@
  * @b: Pointer to a string of binary digits (0 or 1).
  *
  * Return: Converted unsigned int, or 0 if there is one or more chars
- *	in the string b that is not 0 or 1, or if b is NULL.
+ *         in the string b that is not 0 or 1, or if b is NULL.
  */
-
 unsigned int binary_to_uint(const char *b)
 {
+	unsigned int rslt = 0;
+	int itr = 0;
+
 	if (b == NULL)
 	{
+		/* Return 0 if b is NULL */
 		return (0);
 	}
 
-	unsigned int rslt = 0;
-	int r = 0;
-
-	while (b[r] != '\0')
+	while (b[itr] != '\0')
 	{
-		if (b[r] != '0' && b[r] != '1')
+		/* Check if the character is not '0' or '1' */
+		if (b[itr] != '0' && b[itr] != '1')
 		{
-			return (0);
+			return (0); /* Return 0 if invalid character found */
 		}
-		rslt = rslt * 2 + (b[r] - '0');
-		r++;
+		rslt *= 2; /* Multiply the result by 2 */
+		rslt += (b[itr] - '0'); /* Add the binary digit to the result */
+		itr++;
 	}
+
 	return (rslt);
 }
