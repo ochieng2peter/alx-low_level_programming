@@ -13,23 +13,20 @@ unsigned int binary_to_uint(const char *b)
 {
 	if (b == NULL)
 	{
-		/* Return 0 if b is NULL */
 		return (0);
 	}
 
 	unsigned int rslt = 0;
-	int itr = 0;
+	int r = 0;
 
-	while (b[itr] != '\0')
+	while (b[r] != '\0')
 	{
-		/* Check if the character is not '0' or '1' */
-		if (b[itr] != '0' && b[itr] != '1')
+		if (b[r] != '0' && b[r] != '1')
 		{
-			return (0); /* Return 0 if invalid character found */
+			return (0);
 		}
-		rslt = rslt * 2 + (b[itr] - '0'); /* Convert binary to unsigned int */
-		itr++;
+		rslt = rslt * 2 + (b[r] - '0');
+		r++;
 	}
-
 	return (rslt);
 }
