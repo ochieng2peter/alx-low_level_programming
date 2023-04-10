@@ -7,35 +7,22 @@
  * @index: The index of the bit to retrieve, starting from 0.
  *
  * Return: The value of the bit at the given index (0 or 1),
- *         or -1 if an error occurrs ("invalid index").
+ *	or -1 if an error occurrs ("invalid index").
  */
+
 int get_bit(unsigned long int n, unsigned int index)
 {
-	/* Ensure that index is valid */
-	if (index >= (sizeof(unsigned long int) * 8))
-	{
-		/* Invalid index, return -1 */
-		_putchar('-');
-		_putchar('1');
-		_putchar('\n');
-		return (-1);
-	}
+	unsigned int itr;
 
-	/* Create a mask with the bit at the index set to 1 */
-	unsigned long int msk = 1UL << index;
-
-	if ((n & msk) == 0)
-	{
-		/* Bit is 0 */
-		_putchar('0');
-		_putchar('\n');
+	if (n == 0 && index < 64)
 		return (0);
-	}
-	else
+
+	for (itr = 0; itr <= 63; n >>= 1, itr++)
 	{
-		/* Bit is 1 */
-		_putchar('1');
-		_putchar('\n');
-		return (1);
+		if (index == itr)
+		{
+			return (n & 1);
+		}
 	}
+	return (-1);
 }
