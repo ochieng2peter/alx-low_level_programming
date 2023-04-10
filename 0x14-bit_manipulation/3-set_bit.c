@@ -8,18 +8,15 @@
  *
  * Return: 1 on success, -1 on error (invalid index).
  */
+
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (index >= (sizeof(unsigned long int) * 8))
-	{
-		/* Invalid index, return -1 */
+	unsigned long int m;
+
+	if (index > 63)
 		return (-1);
-	}
-
-	/* Create a mask with the bit at the index set to 1 */
-	unsigned long int msk = 1UL << index;
-
-	*n |= msk; /* Set the bit at the index to 1 using bitwise OR(|) */
-
+	/* Bitwise shift to the left by index positions*/
+	m = 1UL << index;
+	*n = (*n | m); /* Bitwise OR operation to set the bit at the index*/
 	return (1);
 }
