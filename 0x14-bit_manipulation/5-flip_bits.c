@@ -9,17 +9,21 @@
  *
  * Return: Number of bits needed to flip.
  */
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int xor = n ^ m;
-	unsigned int count = 0;
+	/* Counter to keep track of number of bit flips */
+	unsigned int n_bits;
 
-
-	while (xor != 0)
+	/* Loop through each bit of n and m, from LSB to MSB */
+	for (nbits = 0; m || n; m >>= 1, n >>= 1)
 	{
-		count += xor & 1; /* If least significant bit is set, increment count */
-		xor >>= 1; /* Shift right to check the next bit */
+		/* Compare the LSBs of n and m using bitwise AND operation*/
+		/* If they are different, increment the bit flip counter */
+		if ((m & 1) != (n & 1))
+			n_bits++;
 	}
 
-	return (count);
+	/** Return the total number of bit flips required */
+	return (n_bits);
 }
