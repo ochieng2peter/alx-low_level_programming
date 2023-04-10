@@ -13,10 +13,10 @@
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	/* Counter to keep track of number of bit flips */
-	unsigned int n_bits;
+	unsigned long int n_bits;
 
 	/* Loop through each bit of n and m, from LSB to MSB */
-	for (nbits = 0; m || n; m >>= 1, n >>= 1)
+	for (n_bits = 0; m || n; m >>= 1, n >>= 1)
 	{
 		/* Compare the LSBs of n and m using bitwise AND operation*/
 		/* If they are different, increment the bit flip counter */
