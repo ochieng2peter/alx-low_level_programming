@@ -9,14 +9,17 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	/* Check if index is out of range */
-	if (index >= (sizeof(unsigned long int) * 8))
+	unsigned long int k;
+
+	if (index > 64)
+	{
 		return (-1);
+	}
+	k = 1 << index;
 
-	/* Create a mask with only the desired bit set to 0 */
-	unsigned long int msk = ~(1UL << index);
-
-	/* Perform bitwise AND with the mask to clear the bit at the given index */
-	*n &= msk;
+	if (*n & k)
+	{
+		*n ^= k;
+	}
 	return (1);
 }
