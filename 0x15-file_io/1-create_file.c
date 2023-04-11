@@ -8,36 +8,32 @@
  * Return: 1 if it success. -1 if it fails(e.g if NULL)
  */
 
-int custom_create_file(const char *custom_filename, char *custom_text_content)
+int create_file(const char *filename, char *text_content)
 {
-	int file_descriptor;
-	int num_letters;
-	int result;
+	int filedes;
+	int nlters;
+	int rwr;
 
-	if (!custom_filename)
-	{
+	if (!filename)
 		return (-1);
-	}
-	file_descriptor = open(custom_filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
-	if (file_descriptor == -1)
-	{
+	filedes = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+
+	if (filedes == -1)
 		return (-1);
-	}
 
-	if (!custom_text_content)
-		custom_text_content = "";
+	if (!text_content)
+		text_content = "";
 
-	for (num_letters = 0; custom_text_content[num_letters]; num_letters++)
+	for (nlters = 0; text_content[nlters]; nlters++)
 		;
 
-	result = write(file_descriptor, custom_text_content, num_letters);
+	rwr = write(filedes, text_content, nlters);
 
-	if (result == -1)
-	{
+	if (rwr == -1)
 		return (-1);
-	}
 
-	close(file_descriptor);
+	close(filedes);
+
 	return (1);
 }
