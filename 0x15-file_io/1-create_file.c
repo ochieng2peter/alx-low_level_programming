@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * custom_create_file - creates a file with perm.
- * @custom_filename: name of file to create
- * @custom_text_content: content to write in the file.
+ * create_file - creates a file with perm.
+ * @filename: name of file to create
+ * @text_content: content to write in the file.
  *
  * Return: 1 if it success. -1 if it fails(e.g if NULL)
  */
