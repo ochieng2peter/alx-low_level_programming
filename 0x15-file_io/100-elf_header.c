@@ -1,4 +1,3 @@
-/*#include "main.h"*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -65,7 +64,9 @@ void printElfInfo(int fileDescriptor)
 		fprintf(stderr, "Error: File is too small to be an ELF file\n");
 		exit(98);
 	}
-	if (buffer[0] != 0x7f || buffer[1] != 'E' || buffer[2] != 'L' || buffer[3] != 'F')
+
+	if (buffer[0] != 0x7f || buffer[1] != 'E' ||
+		buffer[2] != 'L' || buffer[3] != 'F')
 	{
 		fprintf(stderr, "Error: File is not an ELF file\n");
 		exit(98);
@@ -79,7 +80,11 @@ void printElfInfo(int fileDescriptor)
 	printf("OS/ABI: %d\n", (int)buffer[7]);
 	printf("ABI Version: %d\n", (int)buffer[8]);
 	printf("Type: %d\n", *((short *)&buffer[16]));
-	printf("Entry point address: 0x%02x%02x%02x%02x\n", (unsigned char)buffer[27], (unsigned char)buffer[26], (unsigned char)buffer[25], (unsigned char)buffer[24]);
+	printf("Entry point address: 0x%02x%02x%02x%02x\n",
+			(unsigned char)buffer[27],
+			(unsigned char)buffer[26],
+			(unsigned char)buffer[25],
+			(unsigned char)buffer[24]);
 }
 
 /**
